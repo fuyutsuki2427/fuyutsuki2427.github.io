@@ -1,5 +1,82 @@
 ---
+import {
+  IconBrandBluesky,
+  IconBrandGithub,
+  IconBrandMastodon,
+  IconBrandTwitter,
+} from '@tabler/icons-react';
+import Avater from '../components/Avater.astro';
+import Center from '../components/Center.astro';
 import Base from '../layouts/Base.astro';
+import SNSCard from '../components/SNSCard.astro';
+import { Image } from 'astro:assets';
+import MisskeyIcon from '../assets/misskey_icon.svg';
+import niconicoiconSrc from '../assets/niconico_icon(nc296561).png';
 ---
 
-<Base title="portfolio">portfolio-template</Base>
+<Base title="ふゆつきSNSリンク">
+  <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-4">
+      <Center>
+        <Avater />
+      </Center>
+      <Center>
+        <h1 class="text-4xl">ふゆつき</h1>
+      </Center>
+    </div>
+    <div class="flex flex-col gap-4">
+      <SNSCard
+        href="https://misskey.flowers/@fuyutsuki2427"
+        serviceName="はなみすきー"
+        userName="@fuyutsuki2427@misskey.flowers"
+        description="メインSNS　いつもいる"
+      >
+        <MisskeyIcon fill="#84CD00" size={32} />
+      </SNSCard>
+      <SNSCard
+        href="https://x.com/Fuyutsuki_2427"
+        serviceName="Twitter"
+        userName="@Fuyutsuki_2427"
+        description="そこそこ見る"
+      >
+        <IconBrandTwitter color="#1DA1F2" size={32} />
+      </SNSCard>
+      <SNSCard
+        href="https://www.nicovideo.jp/user/127076173"
+        serviceName="ニコニコ動画"
+        userName="127076173"
+        description="ごくまれに動画が上がったり上がらなかったり"
+      >
+        <Image
+          src={niconicoiconSrc}
+          alt="icon"
+          class="aspect-spuare h-[48px] w-[48px] object-cover"
+        />
+      </SNSCard>
+      <SNSCard
+        href="https://fedibird.com/web/accounts/112869490786359239/about"
+        serviceName="fedibird"
+        userName="@fuyutsuki2427@fedibird.com"
+        description="旅行中に使うSNS　はなみすきーにいなければこっち"
+      >
+        <IconBrandMastodon color="#3088D4" size={32} />
+      </SNSCard>
+      <SNSCard
+        href="https://bsky.app/profile/fuyutsuki2427.bsky.social"
+        serviceName="Bluesky"
+        userName="fuyutsuki2427.bsky.social"
+        description="使用頻度低"
+      >
+        <IconBrandBluesky color="#0085FF" size={32} />
+      </SNSCard>
+      <SNSCard
+        href="https://github.com/fuyutsuki2427/"
+        serviceName="github"
+        userName="fuyutsuki2427"
+        description="githubはじめてみた！"
+      >
+        <IconBrandGithub color="#181818" size={32} />
+      </SNSCard>
+    </div>
+  </div>
+</Base>

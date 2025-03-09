@@ -5,8 +5,12 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://fuyutsuki2427.github.io',
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
+  },
+  experimental: {
+    svg: true,
   },
 });

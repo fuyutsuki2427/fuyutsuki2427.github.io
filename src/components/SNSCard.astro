@@ -1,0 +1,24 @@
+---
+import { IconBrandTwitter } from '@tabler/icons-react';
+
+interface Props {
+  href: string;
+  serviceName: string;
+  userName: string;
+  description: string;
+}
+const { href, serviceName, userName, description } = Astro.props;
+---
+
+<a href={href} target="_blank">
+  <div class="flex gap-2 rounded-xl bg-white p-2 shadow-md">
+    <div class="flex h-[60px] w-[60px] shrink-0 items-center justify-center">
+      <slot />
+    </div>
+    <div>
+      <div class="text-xl font-semibold">{serviceName}</div>
+      <div>{userName}</div>
+      <div>{description}</div>
+    </div>
+  </div>
+</a>
