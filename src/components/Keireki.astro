@@ -1,0 +1,16 @@
+---
+interface Props {
+  day: string;
+  subject: string;
+  comment: string;
+}
+const { day, subject, comment } = Astro.props;
+---
+
+<div class="flex gap-2 rounded-xl bg-white p-2 shadow-md">
+    <div class="w-[96px] shrink-0 text-md font-semibold">{day}</div>
+        <div>
+        <div class="text-xl font-semibold">{subject}</div>
+        <div>{comment}</div>
+    </div>
+</div>
